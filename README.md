@@ -14,6 +14,7 @@ fVPN
 4. https://www.cyberghostvpn.com/
 5. https://www.ipvanish.com/
 6. https://surfshark.com/
+7. https://vnm.windscribe.com/
 # Support Android VPN Clients
 
 # Support iOS VPN Clients
