@@ -1,7 +1,9 @@
 fVPN
 ---
 # fVPN Advantages
-1. 
+1. High-Performance
+2. Easy to deploy & setup
+3. Multiple-features
 # fVPN Products
 1. fVPN-Enterprise: VPN Server
 2. fVPN-SaaS: VPN Service
