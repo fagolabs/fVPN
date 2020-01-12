@@ -1,9 +1,12 @@
 # Install Pritunl VPN Server
 
-### 1. Environment
+### 1. Deployment Model
+
+
+### 2. Environment
 - Ubuntu 18.04 LTS
 
-### 2. Install MongoDB
+### 3. Install MongoDB
 
 
 ```sh
@@ -23,7 +26,7 @@ systemctl restart mongodb
 systemctl enable mongodb
 ```
 
-### 3. Install Pritunl
+### 4. Install Pritunl
 
 
 ```sh
@@ -61,7 +64,7 @@ sudo systemctl start pritunl
 sudo systemctl enable pritunl
 ```
 
-### 4. Post installation
+### 5. Post installation
 
 - Get pritunl setup key:
 
@@ -97,3 +100,14 @@ openvpn --config vpn-fagolabs-test_cloud_vpn-demo-inst.ovpn
 
 Paste username and password to browser and getting started with pritunl.
 
+### 6. Setup Let's Encrypt
+
+- Login pritunl server: https://cloudrity.cf. Click "Settings":
+
+
+![frontpages](setup/1.png)
+
+
+- On the ```Settings``` popup, type: ```cloudrity.cf``` under "Lets Encrypt", then click "Save":
+
+![settings](setup/2.png)
