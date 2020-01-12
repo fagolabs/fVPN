@@ -10,7 +10,8 @@ Tham khảo trong guide ```INSTALL.md```, mục
 
 ### 2.1. Quản lý organization
 
-a) Tạo một organization
+#### 2.1.1. Tạo một organization
+
 Bước 1: Đăng nhập portal quản trị: https://<pritunl server ip>. Sử dụng account quản trị mặc định (Tham khảo mục 2.1). Trong lần đầu đăng nhập, cửa sổ setup cơ bản hiện ra như sau:
 
 ![setup](setup/o1.png)
@@ -29,20 +30,24 @@ Kết quả tạo Organization thành công như sau
 
 ![setup](setup/o4.png)
 
-b) Xóa một organization
+#### 2.1.2. Xóa một organization
 
 ### 2.2. Quản lý VPN client user
 
-a) Tạo user
+#### 2.2.1. Tạo user
 
 Bước 1: Trên portal, click tab Users  click Add User
 ![setup](setup/u1.png)
 
 Bước 2: Cấu hình các thông tin cho user mới, bao gồm:
-Name: đặt tùy ý
-Select an organization, chọn một trong các organization đã tạo
-Email: user mail (có thể bỏ qua)
-Pin: password của user, cần phải lưu lại giá trị pin này để sử dụng cho thao tác import profile từ VPN client (sẽ trình bày ở bên dưới)
+
+- **Name**: đặt tùy ý
+
+- **Select an organization**: chọn một trong các organization đã tạo
+
+- **Email**: user mail (có thể bỏ qua)
+
+- **Pin**: password của user, cần phải lưu lại giá trị pin này để sử dụng cho thao tác import profile từ VPN client (sẽ trình bày ở bên dưới)
 
 ![setup](setup/u2.png)
 
@@ -50,7 +55,7 @@ Kết quả thành công tương tự như sau:
 
 ![setup](setup/u3.png)
 
-b) Chỉnh sửa/xóa user
+#### 2.2.2. Chỉnh sửa/xóa user
 
 ## 3. Quản lý VPN instance
 
@@ -148,8 +153,9 @@ Trên giao diện chính, click biểu tượng chỉnh sửa để thay đổi 
 
 Trên giao diện mới, nhập hai thông tin xác thực của user ở tab Basic:
 
-Username: cloud-demo
-Password: chính là giá trị PIN khi thiết lập tạo user
+- **Username**: cloud-demo
+
+- **Password**: chính là giá trị PIN khi thiết lập tạo user
 
 ![setup](setup/m7.png)
 
