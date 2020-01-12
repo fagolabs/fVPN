@@ -1,10 +1,12 @@
 # Install Pritunl VPN Server
 
-### 1. Deployment Model
+### 1. Deployment Model (All in one)
 
-
-### 2. Environment
 - Ubuntu 18.04 LTS
+
+- 1 Public Address
+
+![Deployment Model](setup/3.png)
 
 ### 3. Install MongoDB
 
@@ -108,6 +110,6 @@ Paste username and password to browser and getting started with pritunl.
 ![frontpages](setup/1.png)
 
 
-- On the ```Settings``` popup, type: ```cloudrity.cf``` under "Lets Encrypt", then click "Save":
+- On the ```Settings``` popup, type: ```cloudrity.cf``` under "Lets Encrypt Domain", then click "Save":
 
 ![settings](setup/2.png)
