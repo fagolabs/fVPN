@@ -2,13 +2,13 @@
 
 ---
 
-1. Cấu hình tạo user quản trị portal
+## 1. Cấu hình tạo user quản trị portal
 Tham khảo trong guide ```INSTALL.md```, mục 
  ```5. Post installation```. Sau khi deploy xong sẽ phải cấu hình mặc định một user quản trị portal.
 
-2. Quản lý organization & users
+## 2. Quản lý organization & users
 
-2.1. Quản lý organization
+### 2.1. Quản lý organization
 
 a) Tạo một organization
 Bước 1: Đăng nhập portal quản trị: https://<pritunl server ip>. Sử dụng account quản trị mặc định (Tham khảo mục 2.1). Trong lần đầu đăng nhập, cửa sổ setup cơ bản hiện ra như sau:
@@ -31,7 +31,7 @@ Kết quả tạo Organization thành công như sau
 
 b) Xóa một organization
 
-2.2. Quản lý VPN client user
+### 2.2. Quản lý VPN client user
 
 a) Tạo user
 
@@ -52,9 +52,9 @@ Kết quả thành công tương tự như sau:
 
 b) Chỉnh sửa/xóa user
 
-3. Quản lý VPN instance
+## 3. Quản lý VPN instance
 
-3.1. Tạo VPN instance & attach organization
+### 3.1. Tạo VPN instance & attach organization
 
 **Mục đích**: Tạo một VPN instance bản chất là tạo một routed private network trên VPN server (trong mô hình Single Deployment), mạng này sẽ là mạng nội bộ cho các VPN client kết nối vào và được cấu hình routing ra ngoài internet qua card mạng public cấu hình trên VPN server.
 Có thể tạo nhiều VPN instance khác nhau tương ứng nhiều private network khác nhau trên cùng 1 VPN server.
@@ -112,15 +112,15 @@ Kết quả start server thành công sẽ có log tương tự như sau:
 ![setup](setup/s8.png)
 
 
-3.2. Detach organization
+### 3.2. Detach organization
 
-3.3. Xóa VPN instance
+### 3.3. Xóa VPN instance
 
-4. Kết nối VPN client và VPN server
+## 4. Kết nối VPN client và VPN server
 
-4.1. Kết nối từ thiết bị di động (smarphone, tablet)
+### 4.1. Kết nối từ thiết bị di động (smarphone, tablet)
 
-4.1.1 OpenVPN client
+#### 4.1.1 OpenVPN client
 
 Bước 1: Tải OpenVPN client, ví dụ với hệ điều hành Android, cài đặt OpenVPN for Android:
 
@@ -161,9 +161,9 @@ Quay trở lại màn hình chính, click vào tên của client vừa mới ch�
 
 ![setup](setup/m10.png)
 
-4.2. Kết nối từ PC
+### 4.2. Kết nối từ PC
 
-4.2.1 GUI
+#### 4.2.1 GUI
 
 Bước 1: Tải và cài đặt OpenVPN client (hướng dẫn sau thực hiện trên Windows):
 Windows: https://openvpn.net/downloads/openvpn-connect-v2-windows.msi
@@ -204,4 +204,4 @@ Kiểm tra trên portal thấy user đang online, chứng tỏ đã kết nối 
 
 ![setup](setup/pc11.png)
 
-4.2.2 Command line
+#### 4.2.2 Command line
