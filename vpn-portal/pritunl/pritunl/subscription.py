@@ -7,7 +7,8 @@ from pritunl import utils
 from pritunl import event
 from pritunl import mongo
 from pritunl import messenger
-
+import time
+import math
 import requests
 
 def update():
@@ -18,75 +19,79 @@ def update():
         settings.app.id = utils.random_name()
         settings.commit()
 
-    if not license:
-        settings.local.sub_active = False
-        settings.local.sub_status = None
-        settings.local.sub_plan = None
-        settings.local.sub_quantity = None
-        settings.local.sub_amount = None
-        settings.local.sub_period_end = None
-        settings.local.sub_trial_end = None
-        settings.local.sub_cancel_at_period_end = None
-        settings.local.sub_balance = None
-        settings.local.sub_url_key = None
-    else:
-        for i in xrange(2):
-            try:
-                url = 'https://app.pritunl.com/subscription'
-                if settings.app.dedicated:
-                    url = settings.app.dedicated + '/subscription'
+    settings.local.sub_active = True
+    settings.local.sub_status = 'active'
+    settings.local.sub_plan = 'enterprise'
+    settings.local.sub_quantity = 1
+    settings.local.sub_amount = 2500
+    settings.local.sub_period_end = math.floor(time.time()) + 2592000000
+    settings.local.sub_trial_end = math.floor(time.time()) + 2592000000
+    settings.local.sub_cancel_at_period_end = False
+    settings.local.sub_balance = 0
+    settings.local.sub_url_key = "url"
+    settings.local.sub_styles['enterprise'] = {'etag':'1c253d-6c2-4e3a2f30b418d','last_modified':'Wed, 23 Oct 2019 07:52:54 GMT','data':'dark'}
+    # if not license:
+    #     settings.local.sub_active = False
+    #     settings.local.sub_status = None
+    #     settings.local.sub_plan = None
+    #     settings.local.sub_quantity = None
+    #     settings.local.sub_amount = None
+    #     settings.local.sub_period_end = None
+    #     settings.local.sub_trial_end = None
+    #     settings.local.sub_cancel_at_period_end = None
+    #     settings.local.sub_balance = None
+    #     settings.local.sub_url_key = None
+    # else:
+        
+        # for i in xrange(2):
+            # try:
+            #     # url = 'https://app.pritunl.com/subscription'
+            #     # if settings.app.dedicated:
+            #     #     url = settings.app.dedicated + '/subscription'
 
-                response = requests.get(
-                    url,
-                    json={
-                        'id': settings.app.id,
-                        'license': license,
-                        'version': settings.local.version_int,
-                    },
-                    timeout=max(settings.app.http_request_timeout, 10),
-                )
+            #     # response = requests.get(
+            #     #     url,
+            #     #     json={
+            #     #         'id': settings.app.id,
+            #     #         'license': license,
+            #     #         'version': settings.local.version_int,
+            #     #     },
+            #     #     timeout=max(settings.app.http_request_timeout, 10),
+            #     # )
 
-                # License key invalid
-                if response.status_code == 470:
-                    raise ValueError('License key is invalid')
+            #     # # License key invalid
+            #     # if response.status_code == 470:
+            #     #     raise ValueError('License key is invalid')
 
-                if response.status_code == 473:
-                    raise ValueError(('Version %r not recognized by ' +
-                        'subscription server') % settings.local.version_int)
+            #     # if response.status_code == 473:
+            #     #     raise ValueError(('Version %r not recognized by ' +
+            #     #         'subscription server') % settings.local.version_int)
 
-                data = response.json()
+            #     # data = response.json()
 
-                settings.local.sub_active = data['active']
-                settings.local.sub_status = data['status']
-                settings.local.sub_plan = data['plan']
-                settings.local.sub_quantity = data['quantity']
-                settings.local.sub_amount = data['amount']
-                settings.local.sub_period_end = data['period_end']
-                settings.local.sub_trial_end = data['trial_end']
-                settings.local.sub_cancel_at_period_end = data[
-                    'cancel_at_period_end']
-                settings.local.sub_balance = data.get('balance')
-                settings.local.sub_url_key = data.get('url_key')
-                settings.local.sub_styles[data['plan']] = data['styles']
-            except:
-                if i < 1:
-                    logger.exception('Failed to check subscription status',
-                        'subscription, retrying...')
-                    time.sleep(1)
-                    continue
-                logger.exception('Failed to check subscription status',
-                    'subscription')
-                settings.local.sub_active = False
-                settings.local.sub_status = None
-                settings.local.sub_plan = None
-                settings.local.sub_quantity = None
-                settings.local.sub_amount = None
-                settings.local.sub_period_end = None
-                settings.local.sub_trial_end = None
-                settings.local.sub_cancel_at_period_end = None
-                settings.local.sub_balance = None
-                settings.local.sub_url_key = None
-            break
+                
+            #     # settings.local.sub_styles['enterprise'] = 'dark'
+            # except:
+            #     if i < 1:
+            #         logger.exception('Failed to check subscription status',
+            #             'subscription, retrying...')
+            #         time.sleep(1)
+            #         continue
+            #     logger.exception('Failed to check subscription status',
+            #         'subscription')
+            #     settings.local.sub_active = True
+            #     settings.local.sub_status = 'active'
+            #     settings.local.sub_plan = 'enterprise'
+            #     settings.local.sub_quantity = 1
+            #     settings.local.sub_amount = 250
+            #     settings.local.sub_period_end = math.floor(time.time()/1000) + 2592000
+            #     settings.local.sub_trial_end = math.floor(time.time()/1000) + 2592000
+            #     settings.local.sub_cancel_at_period_end = False
+            #     settings.local.sub_balance = 0
+            #     settings.local.sub_url_key = True
+            #     # settings.local.sub_styles['enterprise'] = 'dark'
+            # break
+            
 
     if settings.app.license_plan != settings.local.sub_plan and \
             settings.local.sub_plan:

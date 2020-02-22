@@ -396,7 +396,25 @@ def response(data=None, status_code=None):
         response.status_code = status_code
     return response
 
-def styles_response(etag, last_modified, data):
+# def styles_response(etag, last_modified, data):
+#     response = flask.Response(response=data, mimetype='text/css')
+#     if settings.conf.static_cache:
+#         response.headers.add('Cache-Control', 'max-age=43200, public')
+#         response.headers.add('ETag', '"%s"' % etag)
+#     else:
+#         response.headers.add('Cache-Control',
+#             'no-cache, no-store, must-revalidate')
+#         response.headers.add('Pragma', 'no-cache')
+#         response.headers.add('Expires', 0)
+#     response.headers.add('Last-Modified', last_modified)
+#     return response
+
+
+def styles_response(etag, last_modified):
+    filedir = os.path.join(os.path.dirname(__file__),'../../www/private.css')
+    filedir = os.path.abspath(os.path.realpath(filedir))
+    with open(filedir, 'r') as f:
+        data = f.read()
     response = flask.Response(response=data, mimetype='text/css')
     if settings.conf.static_cache:
         response.headers.add('Cache-Control', 'max-age=43200, public')
@@ -408,6 +426,7 @@ def styles_response(etag, last_modified, data):
         response.headers.add('Expires', 0)
     response.headers.add('Last-Modified', last_modified)
     return response
+
 
 def rand_str(length):
     s = re.sub(r'[\W_]+', '', base64.b64encode(

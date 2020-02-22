@@ -1,0 +1,1044 @@
+[thawing-refuge-7043][2020-02-06 20:50:49,741][WARNING] Open file ulimit is lower then recommended
+[thawing-refuge-7043][2020-02-06 20:50:49,748][INFO] Starting server
+  selinux_context = "none"
+[thawing-refuge-7043][2020-02-06 20:53:07,598][INFO] Stopping server
+[thawing-refuge-7043][2020-02-06 20:53:40,981][WARNING] Open file ulimit is lower then recommended
+[thawing-refuge-7043][2020-02-06 20:53:40,989][INFO] Starting server
+  selinux_context = "none"
+[thawing-refuge-7043][2020-02-06 20:56:27,166][INFO] Stopping server
+[thawing-refuge-7043][2020-02-06 20:57:03,683][WARNING] Open file ulimit is lower then recommended
+[thawing-refuge-7043][2020-02-06 20:57:03,692][INFO] Starting server
+  selinux_context = "none"
+[thawing-refuge-7043][2020-02-06 21:01:49,243][INFO] Stopping server
+[thawing-refuge-7043][2020-02-06 21:02:12,400][WARNING] Open file ulimit is lower then recommended
+[thawing-refuge-7043][2020-02-06 21:02:12,408][INFO] Starting server
+  selinux_context = "none"
+[thawing-refuge-7043][2020-02-06 22:29:52,866][INFO] Stopping server
+[thawing-refuge-7043][2020-02-06 22:30:14,618][WARNING] Open file ulimit is lower then recommended
+[thawing-refuge-7043][2020-02-06 22:30:14,626][INFO] Starting server
+  selinux_context = "none"
+[thawing-refuge-7043][2020-02-06 22:30:48,077][WARNING] Tried to run assign_ip_pool task queue but server is no longer available
+  server_id = "5e3c312617ed3fa3ee86c2df"
+[thawing-refuge-7043][2020-02-06 22:30:49,184][WARNING] Tried to run assign_ip_pool complete queue but server is no longer available
+  server_id = "5e3c312617ed3fa3ee86c2df"
+[thawing-refuge-7043][2020-02-06 22:30:57,893][INFO] Starting vpn server
+  host_networks   = ["192.168.5.0/24"]
+  server_id       = "5e24735a068dcac10f385fa9"
+  instances_count = 0
+  network         = "192.168.215.0/24"
+  cur_timestamp   = "2020-02-06 15:30:57.892951"
+  instance_id     = "5e3c313117ed3fa3ee86c2f4"
+  instances       = []
+  libipt          = false
+  network6        = "fd00:c0a8:d700::/64"
+  host_id         = "ee8c0215fd0b488c9f45d535cf8b2994"
+  host_address    = "192.168.5.103"
+  route_count     = 1
+  host_address6   = "fe80::1c6c:9e96:3cd2:4775"
+[thawing-refuge-7043][2020-02-06 22:34:34,555][INFO] Stopping server
+[thawing-refuge-7043][2020-02-06 22:34:52,376][WARNING] Open file ulimit is lower then recommended
+[thawing-refuge-7043][2020-02-06 22:34:52,389][INFO] Starting server
+  selinux_context = "none"
+[thawing-refuge-7043][2020-02-06 22:34:52,399][INFO] Demo initiated
+[thawing-refuge-7043][2020-02-06 22:35:15,847][INFO] Stopping server
+[thawing-refuge-7043][2020-02-06 22:37:29,997][ERROR] Failed to check subscription status
+Traceback (most recent call last):
+  File "/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/subscription.py", line 70, in update
+    settings.local.sub_styles['enterprise'] = 'dark'
+TypeError: 'set' object does not support item assignment
+[thawing-refuge-7043][2020-02-06 22:37:31,000][ERROR] Failed to check subscription status
+Traceback (most recent call last):
+  File "/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/subscription.py", line 70, in update
+    settings.local.sub_styles['enterprise'] = 'dark'
+TypeError: 'set' object does not support item assignment
+[thawing-refuge-7043][2020-02-06 22:37:31,001][ERROR] Pritunl setup failed
+Traceback (most recent call last):
+  File "/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/setup/__init__.py", line 52, in setup_all
+    setup_host_fix()
+  File "/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/setup/host_fix.py", line 5, in setup_host_fix
+    subscription.update()
+  File "/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/subscription.py", line 89, in update
+    settings.local.sub_styles['enterprise'] = 'dark'
+TypeError: 'set' object does not support item assignment
+[thawing-refuge-7043][2020-02-06 22:37:31,003][INFO] Stopping server
+[thawing-refuge-7043][2020-02-06 22:40:12,245][WARNING] Open file ulimit is lower then recommended
+[thawing-refuge-7043][2020-02-06 22:40:12,253][INFO] Starting server
+  selinux_context = "none"
+[thawing-refuge-7043][2020-02-06 22:40:19,930][ERROR] Exception on /subscription/styles/enterprise/1002922764091.css [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/auth/app.py", line 19, in _wrapped
+    return call(*args, **kwargs)
+  File "/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/handlers/subscription.py", line 33, in subscription_styles_get
+    styles = settings.local.sub_styles[plan]
+TypeError: 'set' object has no attribute '__getitem__'
+[thawing-refuge-7043][2020-02-06 22:40:20,451][WARNING] Removing instance doc
+  instance_id    = "5e3c321c765e2ae11cfe476a"
+  ttl_timestamp  = "2020-02-06 15:39:50.449170"
+  server_id      = "5e24735a068dcac10f385fa9"
+  cur_timestamp  = "2020-02-06 15:40:20.449170"
+  ping_timestamp = "2020-02-06 15:34:52.385000"
+[thawing-refuge-7043][2020-02-06 22:40:19,930][ERROR] Exception on /subscription/styles/enterprise/1002922764091.css [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/auth/app.py", line 19, in _wrapped
+    return call(*args, **kwargs)
+  File "/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/handlers/subscription.py", line 33, in subscription_styles_get
+    styles = settings.local.sub_styles[plan]
+TypeError: 'set' object has no attribute '__getitem__'
+[thawing-refuge-7043][2020-02-06 22:40:20,461][WARNING] Removing instance doc
+  instance_id    = "5e3c321c765e2ae11cfe476c"
+  ttl_timestamp  = "2020-02-06 15:39:50.449170"
+  server_id      = "5e3c312617ed3fa3ee86c2df"
+  cur_timestamp  = "2020-02-06 15:40:20.449170"
+  ping_timestamp = "2020-02-06 15:34:52.397000"
+[thawing-refuge-7043][2020-02-06 22:40:20,470][INFO] Recovering server state
+  server_id      = "5e24735a068dcac10f385fa9"
+  prefered_hosts = ["ee8c0215fd0b488c9f45d535cf8b2994"]
+[thawing-refuge-7043][2020-02-06 22:40:20,475][INFO] Recovering server state
+  server_id      = "5e3c312617ed3fa3ee86c2df"
+  prefered_hosts = ["ee8c0215fd0b488c9f45d535cf8b2994"]
+[thawing-refuge-7043][2020-02-06 22:40:20,491][INFO] Starting vpn server
+  host_networks   = ["192.168.5.0/24"]
+  server_id       = "5e24735a068dcac10f385fa9"
+  instances_count = 0
+  network         = "192.168.215.0/24"
+  cur_timestamp   = "2020-02-06 15:40:20.490980"
+  instance_id     = "5e3c3364de74c213668d420e"
+  instances       = []
+  libipt          = false
+  network6        = "fd00:c0a8:d700::/64"
+  host_id         = "ee8c0215fd0b488c9f45d535cf8b2994"
+  host_address    = "192.168.5.103"
+  route_count     = 1
+  host_address6   = "fe80::1c6c:9e96:3cd2:4775"
+[thawing-refuge-7043][2020-02-06 22:40:20,525][INFO] Starting vpn server
+  host_networks   = ["192.168.5.0/24"]
+  server_id       = "5e3c312617ed3fa3ee86c2df"
+  instances_count = 0
+  network         = "192.168.235.0/24"
+  cur_timestamp   = "2020-02-06 15:40:20.524192"
+  instance_id     = "5e3c3364de74c213668d420f"
+  instances       = []
+  libipt          = false
+  network6        = "fd00:c0a8:eb00::/64"
+  host_id         = "ee8c0215fd0b488c9f45d535cf8b2994"
+  host_address    = "192.168.5.103"
+  route_count     = 1
+  host_address6   = "fe80::1c6c:9e96:3cd2:4775"
+[thawing-refuge-7043][2020-02-06 22:40:20,591][ERROR] Server error occurred while running
+Traceback (most recent call last):
+  File "/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/server/instance.py", line 1150, in _run_thread
+    self.generate_ovpn_conf()
+  File "/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/server/instance.py", line 139, in generate_ovpn_conf
+    self.server.create_primary_user()
+  File "/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/server/server.py", line 1113, in create_primary_user
+    'server_id': self.id,
+ServerMissingOrg: Primary user cannot be created without any organizations. {'server_id': ObjectId('5e3c312617ed3fa3ee86c2df')}
+  instance_id = "5e3c3364de74c213668d420f"
+  server_id   = "5e3c312617ed3fa3ee86c2df"
+[thawing-refuge-7043][2020-02-06 22:40:28,349][ERROR] Exception on /subscription/styles/enterprise/1002922764091.css [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/auth/app.py", line 19, in _wrapped
+    return call(*args, **kwargs)
+  File "/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/handlers/subscription.py", line 33, in subscription_styles_get
+    styles = settings.local.sub_styles[plan]
+TypeError: 'set' object has no attribute '__getitem__'
+[thawing-refuge-7043][2020-02-06 22:40:28,349][ERROR] Exception on /subscription/styles/enterprise/1002922764091.css [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/auth/app.py", line 19, in _wrapped
+    return call(*args, **kwargs)
+  File "/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/handlers/subscription.py", line 33, in subscription_styles_get
+    styles = settings.local.sub_styles[plan]
+TypeError: 'set' object has no attribute '__getitem__'
+[thawing-refuge-7043][2020-02-06 22:41:34,000][INFO] Stopping server
+[thawing-refuge-7043][2020-02-06 22:41:56,222][WARNING] Open file ulimit is lower then recommended
+[thawing-refuge-7043][2020-02-06 22:41:56,233][INFO] Starting server
+  selinux_context = "none"
+[thawing-refuge-7043][2020-02-06 22:41:58,679][ERROR] Exception on /subscription/styles/enterprise/1002922764091.css [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/auth/app.py", line 19, in _wrapped
+    return call(*args, **kwargs)
+  File "/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/handlers/subscription.py", line 39, in subscription_styles_get
+    styles['etag'],
+TypeError: string indices must be integers, not str
+[thawing-refuge-7043][2020-02-06 22:41:58,679][ERROR] Exception on /subscription/styles/enterprise/1002922764091.css [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/auth/app.py", line 19, in _wrapped
+    return call(*args, **kwargs)
+  File "/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/handlers/subscription.py", line 39, in subscription_styles_get
+    styles['etag'],
+TypeError: string indices must be integers, not str
+[thawing-refuge-7043][2020-02-06 22:42:00,436][INFO] Recovering server state
+  server_id      = "5e24735a068dcac10f385fa9"
+  prefered_hosts = ["ee8c0215fd0b488c9f45d535cf8b2994"]
+[thawing-refuge-7043][2020-02-06 22:42:00,462][INFO] Starting vpn server
+  host_networks   = ["192.168.5.0/24"]
+  server_id       = "5e24735a068dcac10f385fa9"
+  instances_count = 0
+  network         = "192.168.215.0/24"
+  cur_timestamp   = "2020-02-06 15:42:00.460379"
+  instance_id     = "5e3c33c83abb04d3d87f2fc5"
+  instances       = []
+  libipt          = false
+  network6        = "fd00:c0a8:d700::/64"
+  host_id         = "ee8c0215fd0b488c9f45d535cf8b2994"
+  host_address    = "192.168.5.103"
+  route_count     = 1
+  host_address6   = "fe80::1c6c:9e96:3cd2:4775"
+[thawing-refuge-7043][2020-02-06 22:42:20,779][ERROR] Exception on /subscription/styles/enterprise/1002922764091.css [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/auth/app.py", line 19, in _wrapped
+    return call(*args, **kwargs)
+  File "/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/handlers/subscription.py", line 39, in subscription_styles_get
+    styles['etag'],
+TypeError: string indices must be integers, not str
+[thawing-refuge-7043][2020-02-06 22:42:20,779][ERROR] Exception on /subscription/styles/enterprise/1002922764091.css [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/auth/app.py", line 19, in _wrapped
+    return call(*args, **kwargs)
+  File "/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/handlers/subscription.py", line 39, in subscription_styles_get
+    styles['etag'],
+TypeError: string indices must be integers, not str
+[thawing-refuge-7043][2020-02-06 22:43:13,090][INFO] Stopping server
+[thawing-refuge-7043][2020-02-06 22:44:49,218][WARNING] Open file ulimit is lower then recommended
+[thawing-refuge-7043][2020-02-06 22:44:49,226][INFO] Starting server
+  selinux_context = "none"
+[thawing-refuge-7043][2020-02-06 22:44:50,284][INFO] Recovering server state
+  server_id      = "5e24735a068dcac10f385fa9"
+  prefered_hosts = ["ee8c0215fd0b488c9f45d535cf8b2994"]
+[thawing-refuge-7043][2020-02-06 22:44:50,307][INFO] Starting vpn server
+  host_networks   = ["192.168.5.0/24"]
+  server_id       = "5e24735a068dcac10f385fa9"
+  instances_count = 0
+  network         = "192.168.215.0/24"
+  cur_timestamp   = "2020-02-06 15:44:50.306366"
+  instance_id     = "5e3c347229d45cea91f72c4c"
+  instances       = []
+  libipt          = false
+  network6        = "fd00:c0a8:d700::/64"
+  host_id         = "ee8c0215fd0b488c9f45d535cf8b2994"
+  host_address    = "192.168.5.103"
+  route_count     = 1
+  host_address6   = "fe80::1c6c:9e96:3cd2:4775"
+[thawing-refuge-7043][2020-02-06 22:47:11,279][INFO] Stopping server
+[thawing-refuge-7043][2020-02-06 22:47:34,438][WARNING] Open file ulimit is lower then recommended
+[thawing-refuge-7043][2020-02-06 22:47:34,447][INFO] Starting server
+  selinux_context = "none"
+[thawing-refuge-7043][2020-02-06 22:47:36,470][ERROR] Exception on /subscription/styles/enterprise/1002922764091.css [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/auth/app.py", line 19, in _wrapped
+    return call(*args, **kwargs)
+  File "/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/handlers/subscription.py", line 36, in subscription_styles_get
+    styles = settings.local.sub_styles[plan]
+KeyError: u'enterprise'
+[thawing-refuge-7043][2020-02-06 22:47:36,470][ERROR] Exception on /subscription/styles/enterprise/1002922764091.css [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/auth/app.py", line 19, in _wrapped
+    return call(*args, **kwargs)
+  File "/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/handlers/subscription.py", line 36, in subscription_styles_get
+    styles = settings.local.sub_styles[plan]
+KeyError: u'enterprise'
+[thawing-refuge-7043][2020-02-06 22:47:40,112][INFO] Recovering server state
+  server_id      = "5e24735a068dcac10f385fa9"
+  prefered_hosts = ["ee8c0215fd0b488c9f45d535cf8b2994"]
+[thawing-refuge-7043][2020-02-06 22:47:40,143][INFO] Starting vpn server
+  host_networks   = ["192.168.5.0/24"]
+  server_id       = "5e24735a068dcac10f385fa9"
+  instances_count = 0
+  network         = "192.168.215.0/24"
+  cur_timestamp   = "2020-02-06 15:47:40.143117"
+  instance_id     = "5e3c351c60e4930cbfbfd5c8"
+  instances       = []
+  libipt          = false
+  network6        = "fd00:c0a8:d700::/64"
+  host_id         = "ee8c0215fd0b488c9f45d535cf8b2994"
+  host_address    = "192.168.5.103"
+  route_count     = 1
+  host_address6   = "fe80::1c6c:9e96:3cd2:4775"
+[thawing-refuge-7043][2020-02-06 22:47:52,688][ERROR] Exception on /subscription/styles/enterprise/1002922764091.css [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/auth/app.py", line 19, in _wrapped
+    return call(*args, **kwargs)
+  File "/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/handlers/subscription.py", line 36, in subscription_styles_get
+    styles = settings.local.sub_styles[plan]
+KeyError: u'enterprise'
+[thawing-refuge-7043][2020-02-06 22:47:52,688][ERROR] Exception on /subscription/styles/enterprise/1002922764091.css [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/auth/app.py", line 19, in _wrapped
+    return call(*args, **kwargs)
+  File "/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/handlers/subscription.py", line 36, in subscription_styles_get
+    styles = settings.local.sub_styles[plan]
+KeyError: u'enterprise'
+[thawing-refuge-7043][2020-02-06 22:48:01,807][INFO] Starting vpn server
+  host_networks   = ["192.168.5.0/24"]
+  server_id       = "5e24735a068dcac10f385fa9"
+  instances_count = 0
+  network         = "192.168.215.0/24"
+  cur_timestamp   = "2020-02-06 15:48:01.804785"
+  instance_id     = "5e3c353160e4930cbfbfd5e9"
+  instances       = []
+  libipt          = false
+  network6        = "fd00:c0a8:d700::/64"
+  host_id         = "ee8c0215fd0b488c9f45d535cf8b2994"
+  host_address    = "192.168.5.103"
+  route_count     = 1
+  host_address6   = "fe80::1c6c:9e96:3cd2:4775"
+[thawing-refuge-7043][2020-02-06 22:49:52,411][INFO] Stopping server
+[thawing-refuge-7043][2020-02-06 22:50:12,988][WARNING] Open file ulimit is lower then recommended
+[thawing-refuge-7043][2020-02-06 22:50:12,998][INFO] Starting server
+  selinux_context = "none"
+[thawing-refuge-7043][2020-02-06 22:50:22,975][ERROR] Exception on /subscription/styles/enterprise/1002922764091.css [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/auth/app.py", line 19, in _wrapped
+    return call(*args, **kwargs)
+  File "/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/handlers/subscription.py", line 39, in subscription_styles_get
+    styles['etag'],
+TypeError: string indices must be integers, not str
+[thawing-refuge-7043][2020-02-06 22:50:22,975][ERROR] Exception on /subscription/styles/enterprise/1002922764091.css [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/auth/app.py", line 19, in _wrapped
+    return call(*args, **kwargs)
+  File "/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/handlers/subscription.py", line 39, in subscription_styles_get
+    styles['etag'],
+TypeError: string indices must be integers, not str
+[thawing-refuge-7043][2020-02-06 22:59:55,978][INFO] Stopping server
+[thawing-refuge-7043][2020-02-12 17:29:28,081][WARNING] Open file ulimit is lower then recommended
+[thawing-refuge-7043][2020-02-12 17:29:28,279][INFO] Starting server
+  selinux_context = "none"
+[thawing-refuge-7043][2020-02-12 17:29:41,063][ERROR] Exception on /subscription/styles/enterprise/1002922764091.css [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/auth/app.py", line 19, in _wrapped
+    return call(*args, **kwargs)
+  File "/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/handlers/subscription.py", line 36, in subscription_styles_get
+    styles = settings.local.sub_styles[plan]
+KeyError: u'enterprise'
+[thawing-refuge-7043][2020-02-12 17:29:41,063][ERROR] Exception on /subscription/styles/enterprise/1002922764091.css [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/auth/app.py", line 19, in _wrapped
+    return call(*args, **kwargs)
+  File "/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/handlers/subscription.py", line 36, in subscription_styles_get
+    styles = settings.local.sub_styles[plan]
+KeyError: u'enterprise'
+[thawing-refuge-7043][2020-02-12 17:31:31,200][ERROR] Exception on /subscription/styles/enterprise/1002922764091.css [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/auth/app.py", line 19, in _wrapped
+    return call(*args, **kwargs)
+  File "/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/handlers/subscription.py", line 36, in subscription_styles_get
+    subscription.update()
+KeyError: u'enterprise'
+[thawing-refuge-7043][2020-02-12 17:31:31,200][ERROR] Exception on /subscription/styles/enterprise/1002922764091.css [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/auth/app.py", line 19, in _wrapped
+    return call(*args, **kwargs)
+  File "/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/handlers/subscription.py", line 36, in subscription_styles_get
+    subscription.update()
+KeyError: u'enterprise'
+[thawing-refuge-7043][2020-02-12 17:31:37,154][ERROR] Exception on /subscription/styles/enterprise/1002922764091.css [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/auth/app.py", line 19, in _wrapped
+    return call(*args, **kwargs)
+  File "/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/handlers/subscription.py", line 36, in subscription_styles_get
+    subscription.update()
+KeyError: u'enterprise'
+[thawing-refuge-7043][2020-02-12 17:31:37,154][ERROR] Exception on /subscription/styles/enterprise/1002922764091.css [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/auth/app.py", line 19, in _wrapped
+    return call(*args, **kwargs)
+  File "/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/handlers/subscription.py", line 36, in subscription_styles_get
+    subscription.update()
+KeyError: u'enterprise'
+[thawing-refuge-7043][2020-02-12 17:31:46,212][ERROR] Exception on /subscription/styles/enterprise/1002922764091.css [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/auth/app.py", line 19, in _wrapped
+    return call(*args, **kwargs)
+  File "/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/handlers/subscription.py", line 36, in subscription_styles_get
+    subscription.update()
+KeyError: u'enterprise'
+[thawing-refuge-7043][2020-02-12 17:31:46,212][ERROR] Exception on /subscription/styles/enterprise/1002922764091.css [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/auth/app.py", line 19, in _wrapped
+    return call(*args, **kwargs)
+  File "/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/handlers/subscription.py", line 36, in subscription_styles_get
+    subscription.update()
+KeyError: u'enterprise'
+[thawing-refuge-7043][2020-02-12 17:31:49,327][ERROR] Exception on /subscription/styles/enterprise/1002922764091.css [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/auth/app.py", line 19, in _wrapped
+    return call(*args, **kwargs)
+  File "/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/handlers/subscription.py", line 36, in subscription_styles_get
+    subscription.update()
+KeyError: u'enterprise'
+[thawing-refuge-7043][2020-02-12 17:31:49,327][ERROR] Exception on /subscription/styles/enterprise/1002922764091.css [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/auth/app.py", line 19, in _wrapped
+    return call(*args, **kwargs)
+  File "/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/handlers/subscription.py", line 36, in subscription_styles_get
+    subscription.update()
+KeyError: u'enterprise'
+[thawing-refuge-7043][2020-02-12 17:31:52,226][ERROR] Exception on /subscription/styles/enterprise/1002922764091.css [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/auth/app.py", line 19, in _wrapped
+    return call(*args, **kwargs)
+  File "/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/handlers/subscription.py", line 36, in subscription_styles_get
+    subscription.update()
+KeyError: u'enterprise'
+[thawing-refuge-7043][2020-02-12 17:31:52,226][ERROR] Exception on /subscription/styles/enterprise/1002922764091.css [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/auth/app.py", line 19, in _wrapped
+    return call(*args, **kwargs)
+  File "/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/handlers/subscription.py", line 36, in subscription_styles_get
+    subscription.update()
+KeyError: u'enterprise'
+[thawing-refuge-7043][2020-02-12 17:31:56,021][ERROR] Exception on /subscription/styles/enterprise/1002922764091.css [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/auth/app.py", line 19, in _wrapped
+    return call(*args, **kwargs)
+  File "/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/handlers/subscription.py", line 36, in subscription_styles_get
+    subscription.update()
+KeyError: u'enterprise'
+[thawing-refuge-7043][2020-02-12 17:31:56,021][ERROR] Exception on /subscription/styles/enterprise/1002922764091.css [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/auth/app.py", line 19, in _wrapped
+    return call(*args, **kwargs)
+  File "/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/handlers/subscription.py", line 36, in subscription_styles_get
+    subscription.update()
+KeyError: u'enterprise'
+[thawing-refuge-7043][2020-02-12 17:34:33,849][INFO] Stopping server
+[thawing-refuge-7043][2020-02-12 17:35:15,585][WARNING] Open file ulimit is lower then recommended
+[thawing-refuge-7043][2020-02-12 17:35:15,594][INFO] Starting server
+  selinux_context = "none"
+[thawing-refuge-7043][2020-02-12 17:35:33,596][ERROR] Exception on /subscription/styles/enterprise/1002922764091.css [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/auth/app.py", line 19, in _wrapped
+    return call(*args, **kwargs)
+  File "/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/handlers/subscription.py", line 37, in subscription_styles_get
+    styles = settings.local.sub_styles[plan]
+KeyError: u'enterprise'
+[thawing-refuge-7043][2020-02-12 17:35:33,596][ERROR] Exception on /subscription/styles/enterprise/1002922764091.css [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/auth/app.py", line 19, in _wrapped
+    return call(*args, **kwargs)
+  File "/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/handlers/subscription.py", line 37, in subscription_styles_get
+    styles = settings.local.sub_styles[plan]
+KeyError: u'enterprise'
+[thawing-refuge-7043][2020-02-12 17:37:03,598][INFO] Stopping server
+[thawing-refuge-7043][2020-02-12 17:37:50,288][WARNING] Open file ulimit is lower then recommended
+[thawing-refuge-7043][2020-02-12 17:37:50,295][INFO] Starting server
+  selinux_context = "none"
+[thawing-refuge-7043][2020-02-12 17:37:54,062][ERROR] Exception on /subscription/styles/enterprise/1002922764091.css [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/auth/app.py", line 19, in _wrapped
+    return call(*args, **kwargs)
+  File "/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/handlers/subscription.py", line 37, in subscription_styles_get
+    styles = settings.local.sub_styles[plan]
+KeyError: u'enterprise'
+[thawing-refuge-7043][2020-02-12 17:37:54,062][ERROR] Exception on /subscription/styles/enterprise/1002922764091.css [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/auth/app.py", line 19, in _wrapped
+    return call(*args, **kwargs)
+  File "/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/handlers/subscription.py", line 37, in subscription_styles_get
+    styles = settings.local.sub_styles[plan]
+KeyError: u'enterprise'
+[thawing-refuge-7043][2020-02-12 17:39:02,432][INFO] Stopping server
+[thawing-refuge-7043][2020-02-12 17:39:25,438][WARNING] Open file ulimit is lower then recommended
+[thawing-refuge-7043][2020-02-12 17:39:25,447][INFO] Starting server
+  selinux_context = "none"
+[thawing-refuge-7043][2020-02-12 21:53:50,664][INFO] Stopping server
+[thawing-refuge-7043][2020-02-12 21:57:48,888][WARNING] Open file ulimit is lower then recommended
+[thawing-refuge-7043][2020-02-12 21:57:48,920][INFO] Starting server
+  selinux_context = "none"
+[thawing-refuge-7043][2020-02-12 22:08:09,877][INFO] Stopping server
+[thawing-refuge-7043][2020-02-12 22:08:32,179][WARNING] Open file ulimit is lower then recommended
+[thawing-refuge-7043][2020-02-12 22:08:32,187][INFO] Starting server
+  selinux_context = "none"
+[thawing-refuge-7043][2020-02-12 22:09:17,434][ERROR] Exception on /subscription/styles/enterprise/1002922764091.css [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/auth/app.py", line 19, in _wrapped
+    return call(*args, **kwargs)
+  File "/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/handlers/subscription.py", line 36, in subscription_styles_get
+    styles = settings.local.sub_styles[plan]
+KeyError: u'enterprise'
+[thawing-refuge-7043][2020-02-12 22:09:17,434][ERROR] Exception on /subscription/styles/enterprise/1002922764091.css [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/auth/app.py", line 19, in _wrapped
+    return call(*args, **kwargs)
+  File "/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/handlers/subscription.py", line 36, in subscription_styles_get
+    styles = settings.local.sub_styles[plan]
+KeyError: u'enterprise'
+[thawing-refuge-7043][2020-02-12 22:13:18,792][ERROR] Exception on /subscription/styles/enterprise/1002922764091.css [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/auth/app.py", line 19, in _wrapped
+    return call(*args, **kwargs)
+  File "/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/handlers/subscription.py", line 36, in subscription_styles_get
+    styles = settings.local.sub_styles[plan]
+KeyError: u'enterprise'
+[thawing-refuge-7043][2020-02-12 22:13:18,792][ERROR] Exception on /subscription/styles/enterprise/1002922764091.css [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/auth/app.py", line 19, in _wrapped
+    return call(*args, **kwargs)
+  File "/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/handlers/subscription.py", line 36, in subscription_styles_get
+    styles = settings.local.sub_styles[plan]
+KeyError: u'enterprise'
+[thawing-refuge-7043][2020-02-12 22:20:18,432][INFO] Stopping server
+[thawing-refuge-7043][2020-02-12 22:20:35,059][WARNING] Open file ulimit is lower then recommended
+[thawing-refuge-7043][2020-02-12 22:20:35,068][INFO] Starting server
+  selinux_context = "none"
+[thawing-refuge-7043][2020-02-12 22:20:38,665][ERROR] Exception on /subscription/styles/enterprise/1002922764091.css [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/auth/app.py", line 19, in _wrapped
+    return call(*args, **kwargs)
+  File "/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/handlers/subscription.py", line 39, in subscription_styles_get
+    styles['etag'],
+TypeError: string indices must be integers, not str
+[thawing-refuge-7043][2020-02-12 22:20:38,665][ERROR] Exception on /subscription/styles/enterprise/1002922764091.css [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/auth/app.py", line 19, in _wrapped
+    return call(*args, **kwargs)
+  File "/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/handlers/subscription.py", line 39, in subscription_styles_get
+    styles['etag'],
+TypeError: string indices must be integers, not str
+[thawing-refuge-7043][2020-02-12 22:24:47,128][INFO] Stopping server
+[thawing-refuge-7043][2020-02-12 22:25:04,644][WARNING] Open file ulimit is lower then recommended
+[thawing-refuge-7043][2020-02-12 22:25:04,651][INFO] Starting server
+  selinux_context = "none"
+[thawing-refuge-7043][2020-02-12 22:26:33,974][INFO] Stopping server
+[thawing-refuge-7043][2020-02-12 22:26:54,727][WARNING] Open file ulimit is lower then recommended
+[thawing-refuge-7043][2020-02-12 22:26:54,735][INFO] Starting server
+  selinux_context = "none"
+[thawing-refuge-7043][2020-02-12 22:28:56,093][INFO] Stopping server
+[thawing-refuge-7043][2020-02-16 16:22:01,571][WARNING] Open file ulimit is lower then recommended
+[thawing-refuge-7043][2020-02-16 16:22:01,839][INFO] Starting server
+  selinux_context = "none"
+[thawing-refuge-7043][2020-02-16 16:39:06,265][INFO] Stopping server
+[thawing-refuge-7043][2020-02-20 19:50:09,210][WARNING] Open file ulimit is lower then recommended
+[thawing-refuge-7043][2020-02-20 19:50:09,615][INFO] Starting server
+  selinux_context = "none"
+[thawing-refuge-7043][2020-02-20 20:07:16,513][INFO] Stopping server
+[thawing-refuge-7043][2020-02-20 20:08:22,109][WARNING] Open file ulimit is lower then recommended
+[thawing-refuge-7043][2020-02-20 20:08:22,119][INFO] Starting server
+  selinux_context = "none"
+[thawing-refuge-7043][2020-02-20 20:08:36,326][INFO] Stopping server
+[thawing-refuge-7043][2020-02-20 20:12:02,371][WARNING] Open file ulimit is lower then recommended
+[thawing-refuge-7043][2020-02-20 20:12:02,379][INFO] Starting server
+  selinux_context = "none"
+[thawing-refuge-7043][2020-02-20 20:12:20,280][INFO] Stopping server
+[thawing-refuge-7043][2020-02-20 20:15:44,548][WARNING] Open file ulimit is lower then recommended
+[thawing-refuge-7043][2020-02-20 20:15:44,558][INFO] Starting server
+  selinux_context = "none"
+[thawing-refuge-7043][2020-02-20 20:48:36,067][INFO] Stopping server
+[thawing-refuge-7043][2020-02-20 20:48:59,522][WARNING] Open file ulimit is lower then recommended
+[thawing-refuge-7043][2020-02-20 20:48:59,531][INFO] Starting server
+  selinux_context = "none"
+[thawing-refuge-7043][2020-02-20 21:05:32,327][INFO] Stopping server
+[thawing-refuge-7043][2020-02-20 21:05:53,077][WARNING] Open file ulimit is lower then recommended
+[thawing-refuge-7043][2020-02-20 21:05:53,086][INFO] Starting server
+  selinux_context = "none"
+[thawing-refuge-7043][2020-02-20 21:06:36,590][INFO] Stopping server
+[thawing-refuge-7043][2020-02-20 21:13:36,812][WARNING] Open file ulimit is lower then recommended
+[thawing-refuge-7043][2020-02-20 21:13:36,822][INFO] Starting server
+  selinux_context = "none"
+[thawing-refuge-7043][2020-02-20 21:13:51,877][INFO] Stopping server
+[thawing-refuge-7043][2020-02-20 21:14:28,889][WARNING] Open file ulimit is lower then recommended
+[thawing-refuge-7043][2020-02-20 21:14:28,897][INFO] Starting server
+  selinux_context = "none"
+[thawing-refuge-7043][2020-02-20 21:14:59,788][INFO] Stopping server
+[thawing-refuge-7043][2020-02-20 21:16:06,342][WARNING] Open file ulimit is lower then recommended
+[thawing-refuge-7043][2020-02-20 21:16:06,350][INFO] Starting server
+  selinux_context = "none"
+[thawing-refuge-7043][2020-02-20 21:19:38,485][INFO] Stopping server
+[thawing-refuge-7043][2020-02-21 15:57:38,767][WARNING] Open file ulimit is lower then recommended
+[thawing-refuge-7043][2020-02-21 15:57:39,336][INFO] Starting server
+  selinux_context = "none"
+[thawing-refuge-7043][2020-02-21 16:13:31,817][INFO] Stopping server
+[thawing-refuge-7043][2020-02-21 16:15:04,152][WARNING] Open file ulimit is lower then recommended
+[thawing-refuge-7043][2020-02-21 16:15:04,160][INFO] Starting server
+  selinux_context = "none"
+[thawing-refuge-7043][2020-02-21 16:15:22,076][INFO] Stopping server
+[thawing-refuge-7043][2020-02-21 16:15:47,225][WARNING] Open file ulimit is lower then recommended
+[thawing-refuge-7043][2020-02-21 16:15:47,233][INFO] Starting server
+  selinux_context = "none"
+[thawing-refuge-7043][2020-02-21 16:16:33,781][INFO] Starting vpn server
+  host_networks   = ["192.168.5.0/24"]
+  server_id       = "5e24735a068dcac10f385fa9"
+  instances_count = 0
+  network         = "192.168.215.0/24"
+  cur_timestamp   = "2020-02-21 09:16:33.780697"
+  instance_id     = "5e4f9ff17817f18422171cfd"
+  instances       = []
+  libipt          = false
+  network6        = "fd00:c0a8:d700::/64"
+  host_id         = "ee8c0215fd0b488c9f45d535cf8b2994"
+  host_address    = "192.168.5.103"
+  route_count     = 1
+  host_address6   = "fe80::1c6c:9e96:3cd2:4775"
+[thawing-refuge-7043][2020-02-21 16:19:38,084][INFO] Stopping server
+[thawing-refuge-7043][2020-02-21 16:20:54,087][WARNING] Open file ulimit is lower then recommended
+[thawing-refuge-7043][2020-02-21 16:20:54,095][INFO] Starting server
+  selinux_context = "none"
+[thawing-refuge-7043][2020-02-21 16:21:03,857][ERROR] Exception on /subscription/styles/enterprise/1002922764091.css [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/auth/app.py", line 19, in _wrapped
+    return call(*args, **kwargs)
+  File "/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/handlers/subscription.py", line 40, in subscription_styles_get
+    styles['last_modified'],
+  File "/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/utils/misc.py", line 414, in styles_response
+    with open('../www/private.css', 'r') as f:
+IOError: [Errno 2] No such file or directory: '../www/private.css'
+[thawing-refuge-7043][2020-02-21 16:21:03,857][ERROR] Exception on /subscription/styles/enterprise/1002922764091.css [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/auth/app.py", line 19, in _wrapped
+    return call(*args, **kwargs)
+  File "/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/handlers/subscription.py", line 40, in subscription_styles_get
+    styles['last_modified'],
+  File "/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/utils/misc.py", line 414, in styles_response
+    with open('../www/private.css', 'r') as f:
+IOError: [Errno 2] No such file or directory: '../www/private.css'
+[thawing-refuge-7043][2020-02-21 16:25:36,503][INFO] Stopping server
+[thawing-refuge-7043][2020-02-21 16:55:00,134][WARNING] Open file ulimit is lower then recommended
+[thawing-refuge-7043][2020-02-21 16:55:00,142][INFO] Starting server
+  selinux_context = "none"
+[thawing-refuge-7043][2020-02-21 16:55:14,067][ERROR] Exception on /subscription/styles/enterprise/1002922764091.css [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/auth/app.py", line 19, in _wrapped
+    return call(*args, **kwargs)
+  File "/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/handlers/subscription.py", line 40, in subscription_styles_get
+    styles['last_modified'],
+  File "/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/utils/misc.py", line 415, in styles_response
+    with open(os.path.join(filedir,'../www/private.css'), 'r') as f:
+IOError: [Errno 2] No such file or directory: '/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/utils/../www/private.css'
+[thawing-refuge-7043][2020-02-21 16:55:14,067][ERROR] Exception on /subscription/styles/enterprise/1002922764091.css [GET]
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/dist-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/auth/app.py", line 19, in _wrapped
+    return call(*args, **kwargs)
+  File "/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/handlers/subscription.py", line 40, in subscription_styles_get
+    styles['last_modified'],
+  File "/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/utils/misc.py", line 415, in styles_response
+    with open(os.path.join(filedir,'../www/private.css'), 'r') as f:
+IOError: [Errno 2] No such file or directory: '/home/gckm1/working/fVPN/vpn-portal/pritunl/pritunl/utils/../www/private.css'
+[thawing-refuge-7043][2020-02-21 18:38:55,615][INFO] Stopping server
+[thawing-refuge-7043][2020-02-21 18:39:19,686][WARNING] Open file ulimit is lower then recommended
+[thawing-refuge-7043][2020-02-21 18:39:19,721][INFO] Starting server
+  selinux_context = "none"
+[thawing-refuge-7043][2020-02-21 19:26:26,184][INFO] Stopping server
+[thawing-refuge-7043][2020-02-22 17:15:07,997][WARNING] Open file ulimit is lower then recommended
+[thawing-refuge-7043][2020-02-22 17:15:08,005][INFO] Starting server
+  selinux_context = "none"
