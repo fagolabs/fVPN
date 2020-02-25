@@ -229,6 +229,7 @@ define([
         this.loadedStyles[window.subPlan] = true;
         $('<link>').appendTo('head')
           .attr({type: 'text/css', rel: 'stylesheet'})
+          // .attr('href','./style.css')
           .attr('href', '/subscription/styles/' + window.subPlan + '/' +
             window.subVer + '.css');
       }
