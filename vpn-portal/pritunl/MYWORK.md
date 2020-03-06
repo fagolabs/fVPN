@@ -42,4 +42,4 @@ sudo python server.py
 2. dark mode/ light mode available
 3. removed subscription status button
 4. create new administrator account with enterprise subscription
-5. ready with 2 account: pritunl and dev
+5. ready with 2 accounts: pritunl and dev
