@@ -33,7 +33,7 @@ Hacked version Pritunl
 ```
 
 
-# post installation
+# After installation
 
 - Get pritunl setup key:
 ```
@@ -59,7 +59,10 @@ Administrator default password:
   password: "aFrSG0AwZoLr"
 ```
 
-Paste username and password to browser and getting started with pritunl.
+Paste username and password to browser and getting started with pritunl: 
+```
+    $ sudo python server.py start
+```
 
 # feature
 
