@@ -61,17 +61,12 @@ Administrator default password:
 
 Paste username and password to browser and getting started with pritunl.
 
-* Note: you can get 2 default premium account from account.json file stored inside source code folder, just import it to MongoDB: 
-
-```
-    $ mongoimport --db=pritunl --collection=administrators --file=account.json
-```
 # feature
 
 1. full enterprise's features without remote subscription checking
 2. dark mode/ light mode available
 3. removed subscription status button
 4. create new administrator account with enterprise subscription
-5. ready with 2 accounts: pritunl and dev
+
 
 
