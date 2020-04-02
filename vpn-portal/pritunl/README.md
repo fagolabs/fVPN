@@ -108,6 +108,10 @@ mongoimport --db=pritunl --collection=administrators --file=account.json
 
 ![settings](setup/letsencrypt.png)
 
+- Wait till pritunl setup Let's Encrypt certificates successfully. Result should be like below:
+
+![settings](setup/letsencrypt2.png)
+
 
 # Features
 
