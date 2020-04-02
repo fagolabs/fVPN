@@ -123,7 +123,7 @@ python server.py setup-key
 ```
 Sample output: `4e500b26f1df408fabc19c105544c501`
 
-- Access pritunl on web browser: https://\<Public IP of the 1st pritunl server>
+- Access pritunl on web browser: https://\<Public IP of the 2nd/3rd pritunl server>
 
 Paste pritunl setup-key got above & change mongoDB IP (default: 127.0.0.1)
 
