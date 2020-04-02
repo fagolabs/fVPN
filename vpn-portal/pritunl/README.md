@@ -1,15 +1,14 @@
-Hacked version Pritunl
 # 1. Requirements 
  * Requirement: 3 Servers
     - Ubuntu 16.04 LTS xenial
     - Firewall enabled
-    - Network Interfaces: 2 NICs/server
+    - Network Interfaces: 2 NICs/server. Exp:
     
-| Node | Public IP | Management IP (for MongoDB  Replicaset) |
-| --- | --- | --- |
-| Node01 | Public IP 1 | MGMT IP 1 |
-| Node02 | Public IP 2 | MGMT IP 2 |
-| Node03 | Public IP 3 | MGMT IP 3 |
+| Node | Public IP | Management IP (for MongoDB  Replicaset) | MongoDB hostname |
+| --- | --- | --- | --- |
+| Node01 | Public IP 1 | 10.60.1.30 | mongodb0 |
+| Node02 | Public IP 2 | 10.60.1.32 | mongodb1 |
+| Node03 | Public IP 3 | 10.60.1.37 | mongodb2 |
 
  * Make sure your system is fully updated: 
 ```
@@ -50,25 +49,95 @@ Or
 
 
 
-# 2. Installation
+# 2. Installation MongoDB
+## 2.1 Install MongoDB
+
+Repeat the following steps on all nodes:
+ 
+ * Set mongodb hostname (notes: change mongodb IPs first):
+
+```
+export MONGODB0=10.60.1.30
+export MONGODB1=10.60.1.32
+export MONGODB2=10.60.1.37
+
+cat << EOF >> /etc/hosts
+${MONGODB0}  mongodb0  
+${MONGODB1}  mongodb1
+${MONGODB2}  mongodb2
+EOF
+```
 
  * Clone source code from repository: 
+
 ```
 sudo su
 cd /usr/src
 git clone https://github.com/fagolabs/fVPN
 ```
  * Go to the folder cloned: 
+
 ```
 cd /usr/src/fVPN/vpn-portal/pritunl
 ```
- * Run file install.sh: 
+
+ * Install MongoDB: 
+
 ```
 sudo su
-chmod +x install.sh && bash install.sh
+chmod +x install_mongodb.sh && bash install_mongodb.sh
 ```
 
-# 3. Setup MongoDB Replica Set
+## 2.2 Inject Pritunl Premium account
+
+- On the 1st mongodb node (mongodb0):
+
+```
+cd /usr/src/fVPN/vpn-portal/pritunl
+sudo su
+mongoimport --db=pritunl --collection=administrators --file=account.json
+```
+
+## 2.3 Setup Replica Set 
+
+- On the 1st mongodb node (mongodb0), setup replica set for mongodb:
+
+```
+sudo su
+mongo
+```
+
+- On the mongodb shell (in mongodb0 node), setup replicaset:
+
+```
+rs.initiate( {
+   _id : "rs0",
+   members: [
+      { _id: 0, host: "mongodb0:27017" },
+      { _id: 1, host: "mongodb1:27017" },
+      { _id: 2, host: "mongodb2:27017" }
+   ]
+})
+```
+
+Wait for few seconds, then check status of replica set:
+
+```
+rs.conf()
+rs.status()
+```
+
+Ensure that this node to be the PRIMARY node in replica set and replica set has 1 PRIMARY (mongodb0) + 2 SECONDARY (mongodb1, mongodb2).
+
+# 3. Setup Pritunl 
+
+Execure the following commands on all nodes:
+ 
+```
+cd /usr/src/fVPN/vpn-portal/pritunl
+sudo su
+chmod +x install_pritunl.sh && bash install_pritunl.sh
+```
 
 # 4. Post installation
 
@@ -86,9 +155,9 @@ python server.py setup-key
 ```
 Sample output: `4e500b26f1df408fabc19c105544c501`
 
-- Access pritunl on web browser: https://\<Public IP of the 1st pritunl server>
+- Access pritunl on web browser: ```https://<Public IP of the 1st pritunl server>```
 
-Paste pritunl setup-key got above & change mongoDB IP (default: 127.0.0.1)
+- Paste pritunl setup-key got above & change mongoDB connection string to: ```mongodb://mongodb0:27017,mongodb1:27017,mongodb2:27017/pritunl```
 
 - Wait till pritunl setup process to be successful.
 
@@ -123,9 +192,9 @@ python server.py setup-key
 ```
 Sample output: `4e500b26f1df408fabc19c105544c501`
 
-- Access pritunl on web browser: https://\<Public IP of the 2nd/3rd pritunl server>
+- Access pritunl on web browser: ```https://<Public IP of the 2nd/3rd pritunl server>```
 
-Paste pritunl setup-key got above & change mongoDB IP (default: 127.0.0.1)
+- Paste pritunl setup-key got above & change mongoDB connection string to: ```mongodb://mongodb0:27017,mongodb1:27017,mongodb2:27017/pritunl```
 
 - Wait till pritunl setup process to be successful.
 
