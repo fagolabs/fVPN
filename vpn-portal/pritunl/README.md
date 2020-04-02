@@ -54,21 +54,31 @@ Or
 
  * Clone source code from repository: 
 ```
-sudo -i
+sudo su
 cd /usr/src
 git clone https://github.com/fagolabs/fVPN
 ```
  * Go to the folder cloned: 
 ```
-cd fVPN/vpn-portal/pritunl
+cd /usr/src/fVPN/vpn-portal/pritunl
 ```
- * Run file install.sh with sudo privielege: 
+ * Run file install.sh: 
 ```
-bash install.sh
+sudo su
+chmod +x install.sh && bash install.sh
 ```
 
+# 3. Setup MongoDB Replica Set
 
 # 4. Post installation
+
+## 4.1 Setup the 1st server
+
+- SSH to the 1st Pritunl server and go to setup folder:
+
+```
+cd /usr/src/fVPN/vpn-portal/pritunl
+```
 
 - Get pritunl setup key:
 ```
@@ -76,16 +86,17 @@ python server.py setup-key
 ```
 Sample output: `4e500b26f1df408fabc19c105544c501`
 
-- Access pritunl on web browser: https://\<pritunl ip>
+- Access pritunl on web browser: https://\<Public IP of the 1st pritunl server>
 
 Paste pritunl setup-key got above & change mongoDB IP (default: 127.0.0.1)
 
 - Wait till pritunl setup process to be successful.
 
-- Generate pritunl default password:
+- Reset pritunl password:
 ```
-python server.py default-password
+python server.py reset-password
 ```
+
 Sample output:
 ```
  Getting default administrator password
@@ -96,13 +107,29 @@ Administrator default password:
 
 Paste username and password to browser and getting started with pritunl.
 
-* Note: you can get 2 default premium account from account.json file stored inside source code folder, just import it to MongoDB: 
+## 4.2 Setup the 2 remaining servers
+
+Repeat the following steps for each of remaining servers:
+
+- SSH to pritunl server and go to setup folder:
 
 ```
-mongoimport --db=pritunl --collection=administrators --file=account.json
+cd /usr/src/fVPN/vpn-portal/pritunl
 ```
 
-### 6. Setup Let's Encrypt
+- Get pritunl setup key:
+```
+python server.py setup-key
+```
+Sample output: `4e500b26f1df408fabc19c105544c501`
+
+- Access pritunl on web browser: https://\<Public IP of the 1st pritunl server>
+
+Paste pritunl setup-key got above & change mongoDB IP (default: 127.0.0.1)
+
+- Wait till pritunl setup process to be successful.
+
+# 5. Setup Let's Encrypt
 
 - Login pritunl server: https://vpn.fago-labs.club. Click "Settings". On the popup, type: ```vpn.fago-labs.club``` under "Lets Encrypt Domain", then click "Save":
 
