@@ -5,7 +5,8 @@ from pritunl import app
 from pritunl import subscription
 from pritunl import settings
 from pritunl import auth
-
+import time
+import math
 import flask
 import re
 import httplib
@@ -37,42 +38,52 @@ def subscription_styles_get(plan, ver):
     return utils.styles_response(
         styles['etag'],
         styles['last_modified'],
-        styles['data'],
     )
 
 @app.app.route('/subscription', methods=['POST'])
 @auth.session_auth
 def subscription_post():
-    if settings.app.demo_mode:
-        return utils.demo_blocked()
+    # if settings.app.demo_mode:
+    #     return utils.demo_blocked()
 
-    license = flask.request.json['license']
-    license = license.lower().replace('begin license', '').replace(
-        'end license', '')
-    license = re.sub(r'[\W_]+', '', license)
+    # license = flask.request.json['license']
+    # license = license.lower().replace('begin license', '').replace(
+    #     'end license', '')
+    # license = re.sub(r'[\W_]+', '', license)
 
-    try:
-        url = 'https://app.pritunl.com/subscription'
-        if settings.app.dedicated:
-            url = settings.app.dedicated + '/subscription'
+    # try:
+    #     url = 'https://app.pritunl.com/subscription'
+    #     if settings.app.dedicated:
+    #         url = settings.app.dedicated + '/subscription'
 
-        response = requests.get(
-            url,
-            json={
-                'license': license,
-                'version': settings.local.version_int,
-            },
-        )
-    except httplib.HTTPException:
-        return utils.jsonify({
-            'error': SUBSCRIPTION_SERVER_ERROR,
-            'error_msg': SUBSCRIPTION_SERVER_ERROR_MSG,
-        }, 500)
-    data = response.json()
+    #     response = requests.get(
+    #         url,
+    #         json={
+    #             'license': license,
+    #             'version': settings.local.version_int,
+    #         },
+    #     )
+    # except httplib.HTTPException:
+    #     return utils.jsonify({
+    #         'error': SUBSCRIPTION_SERVER_ERROR,
+    #         'error_msg': SUBSCRIPTION_SERVER_ERROR_MSG,
+    #     }, 500)
+    # data = response.json()
 
-    if response.status_code != 200:
-        return utils.jsonify(data, response.status_code)
-
+    # if response.status_code != 200:
+    #     return utils.jsonify(data, response.status_code)
+    license = {
+        'active': True,
+        'status': 'active',
+        'plan': 'enterprise',
+        'quantity': 1,
+        'amount': 250,
+        'period_end': math.floor(time.time()/1000) + 2592000,
+        'trial_end': math.floor(time.time()/1000) + 2592000,
+        'cancel_at_period_end': False,
+        'balance': 250,
+        'url_key': True
+    }
     try:
         subscription.update_license(license)
     except LicenseInvalid:
@@ -85,44 +96,44 @@ def subscription_post():
 @app.app.route('/subscription', methods=['PUT'])
 @auth.session_auth
 def subscription_put():
-    if settings.app.demo_mode:
-        return utils.demo_blocked()
+    # if settings.app.demo_mode:
+    #     return utils.demo_blocked()
 
-    card = flask.request.json.get('card')
-    email = flask.request.json.get('email')
-    plan = flask.request.json.get('plan')
-    cancel = flask.request.json.get('cancel')
+    # card = flask.request.json.get('card')
+    # email = flask.request.json.get('email')
+    # plan = flask.request.json.get('plan')
+    # cancel = flask.request.json.get('cancel')
 
-    try:
-        url = 'https://app.pritunl.com/subscription'
-        if settings.app.dedicated:
-            url = settings.app.dedicated + '/subscription'
+    # try:
+    #     url = 'https://app.pritunl.com/subscription'
+    #     if settings.app.dedicated:
+    #         url = settings.app.dedicated + '/subscription'
 
-        if cancel:
-            response = requests.delete(
-                url,
-                json={
-                    'license': settings.app.license,
-                },
-            )
-        else:
-            response = requests.put(
-                url,
-                json={
-                    'license': settings.app.license,
-                    'card': card,
-                    'plan': plan,
-                    'email': email,
-                },
-            )
-    except httplib.HTTPException:
-        return utils.jsonify({
-            'error': SUBSCRIPTION_SERVER_ERROR,
-            'error_msg': SUBSCRIPTION_SERVER_ERROR_MSG,
-        }, 500)
+    #     if cancel:
+    #         response = requests.delete(
+    #             url,
+    #             json={
+    #                 'license': settings.app.license,
+    #             },
+    #         )
+    #     else:
+    #         response = requests.put(
+    #             url,
+    #             json={
+    #                 'license': settings.app.license,
+    #                 'card': card,
+    #                 'plan': plan,
+    #                 'email': email,
+    #             },
+    #         )
+    # except httplib.HTTPException:
+    #     return utils.jsonify({
+    #         'error': SUBSCRIPTION_SERVER_ERROR,
+    #         'error_msg': SUBSCRIPTION_SERVER_ERROR_MSG,
+    #     }, 500)
 
-    if response.status_code != 200:
-        return utils.jsonify(response.json(), response.status_code)
+    # if response.status_code != 200:
+    #     return utils.jsonify(response.json(), response.status_code)
 
     subscription.update()
 
