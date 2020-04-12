@@ -24,6 +24,7 @@ from pritunl.setup.handlers import setup_handlers
 from pritunl.setup.check import setup_check
 from pritunl.setup.plugins import setup_plugins
 from pritunl.setup.demo import setup_demo
+from pritunl.setup.host_init_server import setup_host_init_server
 
 import resource
 
@@ -49,7 +50,7 @@ def setup_all():
         setup_dns()
         setup_monitoring()
         setup_poolers()
-        setup_host_fix()
+        setup_host_init_server()
         setup_subscription()
         setup_ndppd()
         setup_runners()
