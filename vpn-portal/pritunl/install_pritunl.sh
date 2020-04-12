@@ -1,21 +1,5 @@
 #!/bin/bash
 
-# Setup Go environment
-wget https://dl.google.com/go/go1.12.1.linux-amd64.tar.gz
-sudo tar -C /usr/local -xf go1.12.1.linux-amd64.tar.gz
-rm -f go1.12.1.linux-amd64.tar.gz
-
-tee -a ~/.bashrc << EOF
-export GOPATH=\$HOME/go
-export PATH=/usr/local/go/bin:\$PATH
-EOF
-source ~/.bashrc
-
-go get -u github.com/pritunl/pritunl-dns
-go get -u github.com/pritunl/pritunl-web
-ln -s ~/go/bin/pritunl-dns /usr/bin/pritunl-dns
-ln -s ~/go/bin/pritunl-web /usr/bin/pritunl-web
-
 # Set up pritunl
 export LC_ALL="en_US.UTF-8"
 export LC_CTYPE="en_US.UTF-8"

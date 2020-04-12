@@ -88,17 +88,7 @@ sudo su
 chmod +x install_mongodb.sh && bash install_mongodb.sh
 ```
 
-## 2.2 Inject Pritunl Premium account
-
-- On the 1st mongodb node (mongodb0):
-
-```
-cd /usr/src/fVPN/vpn-portal/pritunl
-sudo su
-mongoimport --db=pritunl --collection=administrators --file=account.json
-```
-
-## 2.3 Setup Replica Set 
+## 2.2 Setup Replica Set 
 
 - On the 1st mongodb node (mongodb0), setup replica set for mongodb:
 
@@ -129,9 +119,58 @@ rs.status()
 
 Ensure that this node to be the PRIMARY node in replica set and replica set has 1 PRIMARY (mongodb0) + 2 SECONDARY (mongodb1, mongodb2).
 
+## 2.3 Inject Pritunl Premium account
+
+- Check mongodb role on all nodes (SECONDARY or PRIMARY):
+
+```
+sudo su
+mongo
+```
+
+Sample output:
+
+```
+MongoDB shell version v4.2.5
+...
+MongoDB server version: 4.2.5
+...
+
+---
+
+rs0:PRIMARY>
+```
+
+- On the PRIMARY mongodb node, execute the below commands:
+
+```
+cd /usr/src/fVPN/vpn-portal/pritunl
+sudo su
+mongoimport --db=pritunl --collection=administrators --file=account.json
+```
+
 # 3. Setup Pritunl 
 
-Execure the following commands on all nodes:
+- Setup go environment on all nodes:
+
+```
+wget https://dl.google.com/go/go1.12.1.linux-amd64.tar.gz
+sudo tar -C /usr/local -xf go1.12.1.linux-amd64.tar.gz
+rm -f go1.12.1.linux-amd64.tar.gz
+
+tee -a ~/.bashrc << EOF
+export GOPATH=\$HOME/go
+export PATH=/usr/local/go/bin:\$PATH
+EOF
+source ~/.bashrc
+
+go get -u github.com/pritunl/pritunl-dns
+go get -u github.com/pritunl/pritunl-web
+ln -s ~/go/bin/pritunl-dns /usr/bin/pritunl-dns
+ln -s ~/go/bin/pritunl-web /usr/bin/pritunl-web
+```
+
+- Execure the following commands on all nodes:
  
 ```
 cd /usr/src/fVPN/vpn-portal/pritunl
