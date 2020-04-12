@@ -1,56 +1,210 @@
-Hacked version Pritunl
-# before install 
- * requirement: 
-    + Ubuntu 18.04 LTS bionic
-    + Firewall enabled
- * make sure your system is fully updated: 
+# 1. Requirements 
+ * Requirement: 3 Servers
+    - Ubuntu 16.04 LTS xenial
+    - Firewall enabled
+    - Network Interfaces: 2 NICs/server. Exp:
+    
+| Node | Public IP | Management IP (for MongoDB  Replicaset) | MongoDB hostname |
+| --- | --- | --- | --- |
+| Node01 | Public IP 1 | 10.60.1.30 | mongodb0 |
+| Node02 | Public IP 2 | 10.60.1.32 | mongodb1 |
+| Node03 | Public IP 3 | 10.60.1.37 | mongodb2 |
+
+ * Make sure your system is fully updated: 
 ```
-    $ sudo apt update
-    $ sudo apt upgrade
+sudo -i
+apt-get update
+apt-get dist-upgrade -y
 ```
 
- * If you are using ufw firewall, use the following commands to open some port so that Pritunl works properly :
+ * If you are using iptables or ufw firewall, use the following commands to open some port so that Pritunl works properly :
+
+| Direction | Source | Destination | Port/Port Range |
+| --- | --- | --- | --- |
+| Ingress | 0.0.0.0/0 | - | 80 |
+| Ingress | 0.0.0.0/0 | - | 443 |
+| Ingress | MGMT Subnet (e.g: 10.60.1.0/24) | - | 27017 |
+| Ingress | 0.0.0.0/0 | - | 10000-20000 |
+| Egress | - | 0.0.0.0/0 | 80 |
+| Egress | - | 0.0.0.0/0 | 443 |
+| Egress | - | MGMT Subnet (e.g: 10.60.1.0/24) | 27017 |
+| Egress | - | 0.0.0.0/0 | 10000-20000 |
+
+* Register a domain and add 3 A-Records, pointing domain to 3 public IPs belong to Pritunl Servers. E.g:
+
+| Record Type | Name | Value |
+| --- | --- | --- |
+| A | vpn.fago-labs.club | Public IP 1 |
+| A | vpn.fago-labs.club | Public IP 2 |
+| A | vpn.fago-labs.club | Public IP 3 |
+
+Or
+
+| Record Type | Name | Value |
+| --- | --- | --- |
+| A | fago-labs.club | Public IP 1 |
+| A | fago-labs.club | Public IP 2 |
+| A | fago-labs.club | Public IP 3 |
+| CNAME | vpn.fago-labs.club | fago-labs.club |
+
+
+
+# 2. Installation MongoDB
+## 2.1 Install MongoDB
+
+Repeat the following steps on all nodes:
+ 
+ * Set mongodb hostname (notes: change mongodb IPs first):
+
 ```
-    $ sudo ufw allow http
-    $ sudo ufw allow https
-    $ sudo ufw allow 10447/udp
-    $ sudo ufw reload
+export MONGODB0=10.60.1.30
+export MONGODB1=10.60.1.32
+export MONGODB2=10.60.1.37
+
+cat << EOF >> /etc/hosts
+${MONGODB0}  mongodb0  
+${MONGODB1}  mongodb1
+${MONGODB2}  mongodb2
+EOF
 ```
 
-# installation
+ * Clone source code from repository: 
 
- * clone source code from repository: 
 ```
-    $ git clone https://github.com/fagolabs/fVPN
+sudo su
+cd /usr/src
+git clone https://github.com/fagolabs/fVPN
 ```
- * go to the folder cloned: 
+ * Go to the folder cloned: 
+
 ```
-    $ cd ./fVPN/vpn-portal/pritunl
-```
- * run file install.sh with sudo privielege: 
-```
-    $ sudo bash install.sh
+cd /usr/src/fVPN/vpn-portal/pritunl
 ```
 
+ * Install MongoDB: 
 
-# post installation
+```
+sudo su
+chmod +x install_mongodb.sh && bash install_mongodb.sh
+```
+
+## 2.2 Setup Replica Set 
+
+- On the 1st mongodb node (mongodb0), setup replica set for mongodb:
+
+```
+sudo su
+mongo
+```
+
+- On the mongodb shell (in mongodb0 node), setup replicaset:
+
+```
+rs.initiate( {
+   _id : "rs0",
+   members: [
+      { _id: 0, host: "mongodb0:27017" },
+      { _id: 1, host: "mongodb1:27017" },
+      { _id: 2, host: "mongodb2:27017" }
+   ]
+})
+```
+
+Wait for few seconds, then check status of replica set:
+
+```
+rs.conf()
+rs.status()
+```
+
+Ensure that this node to be the PRIMARY node in replica set and replica set has 1 PRIMARY (mongodb0) + 2 SECONDARY (mongodb1, mongodb2).
+
+## 2.3 Inject Pritunl Premium account
+
+- Check mongodb role on all nodes (SECONDARY or PRIMARY):
+
+```
+sudo su
+mongo
+```
+
+Sample output:
+
+```
+MongoDB shell version v4.2.5
+...
+MongoDB server version: 4.2.5
+...
+
+---
+
+rs0:PRIMARY>
+```
+
+- On the PRIMARY mongodb node, execute the below commands:
+
+```
+cd /usr/src/fVPN/vpn-portal/pritunl
+sudo su
+mongoimport --db=pritunl --collection=administrators --file=account.json
+```
+
+# 3. Setup Pritunl 
+
+- Setup go environment on all nodes:
+
+```
+wget https://dl.google.com/go/go1.12.1.linux-amd64.tar.gz
+sudo tar -C /usr/local -xf go1.12.1.linux-amd64.tar.gz
+rm -f go1.12.1.linux-amd64.tar.gz
+
+tee -a ~/.bashrc << EOF
+export GOPATH=\$HOME/go
+export PATH=/usr/local/go/bin:\$PATH
+EOF
+source ~/.bashrc
+
+go get -u github.com/pritunl/pritunl-dns
+go get -u github.com/pritunl/pritunl-web
+ln -s ~/go/bin/pritunl-dns /usr/bin/pritunl-dns
+ln -s ~/go/bin/pritunl-web /usr/bin/pritunl-web
+```
+
+- Execure the following commands on all nodes:
+ 
+```
+cd /usr/src/fVPN/vpn-portal/pritunl
+sudo su
+chmod +x install_pritunl.sh && bash install_pritunl.sh
+```
+
+# 4. Post installation
+
+## 4.1 Setup the 1st server
+
+- SSH to the 1st Pritunl server and go to setup folder:
+
+```
+cd /usr/src/fVPN/vpn-portal/pritunl
+```
 
 - Get pritunl setup key:
 ```
-    $ python server.py setup-key
+python server.py setup-key
 ```
 Sample output: `4e500b26f1df408fabc19c105544c501`
 
-- Access pritunl on web browser: https://\<pritunl ip>
+- Access pritunl on web browser: ```https://<Public IP of the 1st pritunl server>```
 
-Paste pritunl setup-key got above & change mongoDB IP (default: 127.0.0.1)
+- Paste pritunl setup-key got above & change mongoDB connection string to: ```mongodb://mongodb0:27017,mongodb1:27017,mongodb2:27017/pritunl```
 
 - Wait till pritunl setup process to be successful.
 
-- Generate pritunl default password:
+- Reset pritunl password:
 ```
-    $ python server.py default-password
+python server.py reset-password
 ```
+
 Sample output:
 ```
  Getting default administrator password
@@ -61,17 +215,43 @@ Administrator default password:
 
 Paste username and password to browser and getting started with pritunl.
 
-* Note: you can get 2 default premium account from account.json file stored inside source code folder, just import it to MongoDB: 
+## 4.2 Setup the 2 remaining servers
+
+Repeat the following steps for each of remaining servers:
+
+- SSH to pritunl server and go to setup folder:
 
 ```
-    $ mongoimport --db=pritunl --collection=administrators --file=account.json
+cd /usr/src/fVPN/vpn-portal/pritunl
 ```
-# feature
+
+- Get pritunl setup key:
+```
+python server.py setup-key
+```
+Sample output: `4e500b26f1df408fabc19c105544c501`
+
+- Access pritunl on web browser: ```https://<Public IP of the 2nd/3rd pritunl server>```
+
+- Paste pritunl setup-key got above & change mongoDB connection string to: ```mongodb://mongodb0:27017,mongodb1:27017,mongodb2:27017/pritunl```
+
+- Wait till pritunl setup process to be successful.
+
+# 5. Setup Let's Encrypt
+
+- Login pritunl server: https://vpn.fago-labs.club. Click "Settings". On the popup, type: ```vpn.fago-labs.club``` under "Lets Encrypt Domain", then click "Save":
+
+![settings](setup/letsencrypt.png)
+
+- Wait till pritunl setup Let's Encrypt certificates successfully. Result should be like below:
+
+![settings](setup/letsencrypt2.png)
+
+
+# Features
 
 1. full enterprise's features without remote subscription checking
 2. dark mode/ light mode available
 3. removed subscription status button
 4. create new administrator account with enterprise subscription
 5. ready with 2 accounts: pritunl and dev
-
-
